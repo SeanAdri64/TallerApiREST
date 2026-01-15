@@ -20,7 +20,7 @@ public class PostController {
     // POST /posts
     @PostMapping
     public Post crear(@Valid @RequestBody Post post) {
-        return postService.crear(post);
+        return postService.crear(post, null);
     }
 
     // GET /posts
@@ -47,3 +47,4 @@ public class PostController {
         postService.eliminar(id);
     }
 }
+
