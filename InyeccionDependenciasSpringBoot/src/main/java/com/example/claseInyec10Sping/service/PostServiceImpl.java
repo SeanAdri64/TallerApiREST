@@ -35,4 +35,23 @@ public class PostServiceImpl implements PostService {
     public List<Post> listar() {
         return postRepository.findAll();
     }
+
+    @Override
+    public Post obtenerPorId(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerPorId'");
+    }
+
+    @Override
+    public Post actualizar(Long id, Post post) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizar'");
+    }
+
+    @Override
+    public void eliminar(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminar'");
+    }
 }
+
