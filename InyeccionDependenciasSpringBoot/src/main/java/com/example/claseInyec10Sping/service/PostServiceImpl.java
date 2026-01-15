@@ -36,22 +36,25 @@ public class PostServiceImpl implements PostService {
         return postRepository.findAll();
     }
 
-    @Override
+@Override
     public Post obtenerPorId(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerPorId'");
+        return postRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Post no encontrado"));
     }
 
     @Override
     public Post actualizar(Long id, Post post) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizar'");
+        Post existente = obtenerPorId(id);
+        existente.setTitulo(post.getTitulo());
+        existente.setContenido(post.getContenido());
+        return postRepository.save(existente);
     }
 
     @Override
     public void eliminar(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminar'");
+        obtenerPorId(id);
+        postRepository.deleteById(id);
     }
 }
+
 
